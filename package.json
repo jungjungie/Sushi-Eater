@@ -1,0 +1,25 @@
+{
+  "name": "Sushi-Eater",
+  "version": "1.0.0",
+  "description": "A sushi logger built with MySQL, Node, Express, Handlebars and a homemade ORM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jungjungie/Sushi-Eater.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jungjungie/Sushi-Eater/issues"
+  },
+  "homepage": "https://github.com/jungjungie/Sushi-Eater#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.0.0",
+    "mysql": "^2.18.1"
+  }
+}
