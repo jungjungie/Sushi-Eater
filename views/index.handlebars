@@ -1,0 +1,26 @@
+<h1>Let's Eat Some Sushi!</h1>
+
+{{!-- Form to capture user inputs for sushi they want to eat --}}
+<form>
+    <input type='text' name='sushi' placeholder='What sushi do you want to eat?'>
+
+    <button type='submit'>Submit</button>
+</form>
+
+{{!-- List of sushi that is ready to eat --}}
+<h2>Ready to Eat:</h2>
+
+<ul>
+    {{#each sushi}}
+
+    {{/each}}
+</ul>
+
+{{!-- List of sushi that has been eaten --}}
+<h2>Already Eaten:</h2>
+
+<ul>
+    {{#each sushi}}
+        
+    {{/each}}
+</ul>
