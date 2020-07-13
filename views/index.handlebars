@@ -1,26 +1,32 @@
-<h1>Let's Eat Some Sushi!</h1>
+<div id='mainContainer'>
+    <h1>Let's Eat Sushi!</h1>
 
-{{!-- Form to capture user inputs for sushi they want to eat --}}
-<form>
-    <input type='text' name='sushi' placeholder='What sushi do you want to eat?'>
+    {{!-- Form to capture user inputs for sushi they want to eat --}}
+    <form>
+        <input type='text' name='sushi' placeholder='What sushi roll do you want to eat?'>
 
-    <button type='submit'>Submit</button>
-</form>
+        <button type='submit'>Submit</button>
+    </form>
 
-{{!-- List of sushi that is ready to eat --}}
-<h2>Ready to Eat:</h2>
+    {{!-- List of sushi that is ready to eat --}}
+    <div id='readyContainer' class='container'>
+        <h2>Ready to Eat:</h2>
 
-<ul>
-    {{#each sushi}}
+        <ul>
+            {{#each sushi}}
 
-    {{/each}}
-</ul>
+            {{/each}}
+        </ul>
+    </div>
 
-{{!-- List of sushi that has been eaten --}}
-<h2>Already Eaten:</h2>
+    {{!-- List of sushi that has been eaten --}}
+    <div id='eatenContainer' class='container'>
+        <h2>Already Eaten:</h2>
 
-<ul>
-    {{#each sushi}}
-        
-    {{/each}}
-</ul>
+        <ul>
+            {{#each sushi}}
+                
+            {{/each}}
+        </ul>
+    </div>
+</div>
