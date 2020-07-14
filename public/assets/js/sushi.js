@@ -1,43 +1,47 @@
 // Makes sure we wait to attach our handlers until the DOM is fully loaded
 $(function () {
-    $('.change-eaten').on('click', function (event) {
-        let id = $(this).data('id');
-        let newEaten = $(this).data('neweaten');
 
-        let newEatState = {
-            eating: newEaten
-        };
+    // Event listener for 'Eat it!' button
+    // $('.eatenBtn').on('click', function (event) {
+    //     let id = $(this).data('id');
+    //     let nowEaten = $(this).data('nowEaten');
 
-        // Sends the PUT request
-        $.ajax('/api/sushi/' + id, {
-            type: 'PUT',
-            data: newEatState
-        }).then(
-            function () {
-                console.log('changed eaten to', newEaten);
-                // Reloads the page to get the updated list
-                location.reload();
-            }
-        );
-    });
+    //     let newEatState = {
+    //         eating: nowEaten
+    //     };
 
-    $('.add-sushi-form').on('submit', function (event) {
-        // Makes sure to preventDefault on a submit event
+    //     // Sends the PUT request
+    //     $.ajax('/api/sushi/' + id, {
+    //         type: 'PUT',
+    //         data: nowEatState
+    //     }).then(
+    //         function () {
+    //             console.log('changed eaten to', nowEaten);
+    //             // Reloads the page to get the updated list
+    //             location.reload();
+    //         }
+    //     );
+    // });
+
+    // Event listener for 'submit' button to add new sushi
+    $('#add-sushi-form').on('submit', function (event) {
         event.preventDefault();
 
-        var newSushi = {
+        let newSushi = {
             sushi_name: $('#new-sushi').val().trim(),
-            eaten: $('[name=eaten]:checked').val().trim()
+            eaten: 0
         };
 
-        // Sends the POST request.
+        console.log(newSushi);
+
+        // Sends the POST request
         $.ajax('/api/sushi', {
             type: 'POST',
             data: newSushi
         }).then(
             function () {
                 console.log('created new sushi');
-                // Reload the page to get the updated list
+           
                 location.reload();
             }
         );

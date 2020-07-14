@@ -5,7 +5,7 @@
     <form id='add-sushi-form'>
         <input type='text' name='sushi' id='new-sushi' placeholder='What sushi roll do you want to eat?'>
 
-        <button type='submit'>Submit</button>
+        <button class='submitBtn' type='submit'>Submit</button>
     </form>
 
     {{!-- List of sushi that is ready to eat --}}
@@ -14,8 +14,10 @@
 
         <ul>
             {{#each sushi}}
-                {{#unless eaten}}
-                    <li>{{sushi_name}}</li>
+                {{#unless eaten eat=true}}
+                    <li>{{sushi_name}} <button class='eatenBtn' data-id='{{id}}' data-nowEaten='{{eat}}'>
+                        Eat it!
+                    </button></li>
                 {{/unless}}
             {{/each}}
         </ul>
@@ -27,7 +29,12 @@
 
         <ul>
             {{#each sushi}}
-                
+                {{#if eaten eat=false}}
+                    <li>{{sushi_name}}</li>
+                    <button class='change-eaten' data-id='{{id}}' data-newEat='{{eat}}'>
+
+                    </button>
+                {{/if}}
             {{/each}}
         </ul>
     </div>

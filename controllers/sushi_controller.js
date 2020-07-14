@@ -15,16 +15,15 @@ router.get('/', function(req, res) {
   });
 });
 
-// router.post('/api/sushi', function(req, res) {
-//   sushi.create([
-//     'sushi_name', 'eaten'
-//   ], [
-//     req.body.sushi_name, req.body.eaten
-//   ], function(result) {
-//     // Sends back the ID of the new sushi roll
-//     res.json({ id: result.insertId });
-//   });
-// });
+router.post('/api/sushi', function(req, res) {
+  sushi.create(['sushi_name', 'eaten'], [
+    req.body.sushi_name, req.body.eaten
+  ], function(result) {
+    // Sends back the ID of the new sushi roll
+    console.log({ id: result.insertId });
+    res.json({ id: result.insertId });
+  });
+});
 
 // router.put('/api/sushi/:id', function(req, res) {
 //   let condition = 'id = ' + req.params.id;

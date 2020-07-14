@@ -7,12 +7,11 @@ let sushi = {
         cb(res);
       });
     },
-    // The variables cols and vals are arrays
-    // create: function(cols, vals, cb) {
-    //   orm.create('sushi', cols, vals, function(res) {
-    //     cb(res);
-    //   });
-    // },
+    create: function(cols, vals, cb) {
+      orm.insertOne('sushi', cols, vals, function(res) {
+        cb(res);
+      });
+    },
     // update: function(objColVals, condition, cb) {
     //   orm.update('sushi', objColVals, condition, function(res) {
     //     cb(res);

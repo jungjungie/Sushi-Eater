@@ -10,9 +10,13 @@ const orm = {
             cb(res);
         }
         )},
-    // insertOne: function() {
-    //     connection.query('INSERT INTO sushi (sushi_name) VALUES ()')
-    // },
+    insertOne: function(table, col2, val, cb) {
+        connection.query('INSERT INTO ?? (??) VALUES (?)', [table, col2, val], function (err, res) {
+            if (err) throw err;
+
+            cb(res);
+        })
+    },
     // updateOne: function() {
 
     // }
