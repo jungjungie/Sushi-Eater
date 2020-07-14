@@ -1,7 +1,7 @@
 // Dependencies
 const express = require('express');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers/sushi_controllers.js');
+const routes = require('./controllers/sushi_controller.js');
 const PORT = process.env.PORT || 8080;
 
 const app = express();

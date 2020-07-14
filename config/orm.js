@@ -1,26 +1,22 @@
 // Imports MySQL connection
 const connection = require('../config/connection.js');
 
-function selectAll() {
-};
-
-function insertOne() {
-};
-
-function updateOne() {
-};
-
+// ORM object for SQL functions
 const orm = {
-    all: function() {
-        
-    },
-    create: function() {
+    selectAll: function(table, cb) {
+        connection.query('SELECT * FROM ??', [table], function(err, res) {
+            if (err) throw err;
+            
+            cb(res);
+        }
+        )},
+    // insertOne: function() {
+    //     connection.query('INSERT INTO sushi (sushi_name) VALUES ()')
+    // },
+    // updateOne: function() {
 
-    },
-    update: function() {
-
-    }
+    // }
 }
 
-// Exports the orm object for the model (sushi.js)
+// Exports the orm object for the model (sushiModel.js)
 module.exports = orm;
