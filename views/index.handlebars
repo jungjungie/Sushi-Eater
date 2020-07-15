@@ -1,14 +1,16 @@
 <div id='opaqueBg'>
+    </div>
     <div id='mainContainer' class='text-center shadow'>
-
+        <i class="fas fa-utensils"></i>
         <h1>Sushi Eater!</h1>
 
         {{!-- Form to capture user inputs for sushi they want to eat --}}
-        <form id='add-sushi-form' class='form-group'>
-            <input type='text' name='sushi' id='new-sushi' class="form-control" placeholder='What do you want to eat?'>
-
-            <button class='submitBtn btn btn-primary' type='submit'>Submit</button>
-        </form>
+        <div class='container d-flex justify-content-center spacer'>
+            <form id='add-sushi-form' class='form-group'>
+                <input type='text' name='sushi' id='new-sushi' class="form-control text-center" placeholder='What do you want to eat?'>
+                <button class='submitBtn btn' type='submit'>Submit</button>
+            </form>
+        </div>
 
         <div class='container'>
             <div class='row'>
@@ -20,7 +22,7 @@
                         <ul class='text-left list-group list-group-flush'>
                             {{#each sushi}}
                             {{#unless eaten}}
-                            <li class='list-group-item'>{{sushi_name}} <button class='btn btn-primary eatenBtn'
+                            <li class='list-group-item'>{{sushi_name}} <button class='btn eatenBtn'
                                     data-id='{{id}}'>
                                     Yum! Enjoy!
                                 </button></li>
@@ -38,7 +40,7 @@
                             {{#each sushi}}
                             {{#if eaten}}
                             <li class='list-group-item'>{{sushi_name}}
-                                <button class='btn btn-primary deleteBtn' data-id='{{id}}'>Remove
+                                <button class='btn deleteBtn' data-id='{{id}}'>Remove
                                 </button>
                             </li>
                             {{/if}}
@@ -49,4 +51,3 @@
             </div>
         </div>
     </div>
-</div>
