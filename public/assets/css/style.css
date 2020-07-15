@@ -32,12 +32,12 @@ h2 {
     font-size: 1.8em;
 }
 
-#new-sushi {
-    width: 50vw;
+#icon {
+    color: #ff5e13;
 }
 
-.card {
-    background: white;
+#new-sushi {
+    width: 50vw;
 }
 
 .submitBtn {
@@ -59,4 +59,30 @@ h2 {
 
 .spacer {
     margin-bottom: 40px;
+}
+
+/* For iPad views */
+@media (max-width: 800px) {
+    #mainContainer {
+        width: 90vw;
+        padding: 80px 20px;
+        margin: 50px 0px;
+    }
+
+    #new-sushi {
+        width: 85vw;
+    }
+}
+
+/* For mobile views */
+@media (max-width: 500px) {
+    #mainContainer {
+        width: 95vw;
+        padding: 60px 0px;
+        margin: 10px 0px;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
 }

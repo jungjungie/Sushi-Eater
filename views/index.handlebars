@@ -1,7 +1,7 @@
 <div class='d-flex justify-content-center'>
 <div id='mainContainer' class='text-center shadow'>
-    <i class="fas fa-utensils"></i>
-    <h1>Sushi Eater!</h1>
+    
+    <h1>Sushi <i id='icon' class="fa fa-cutlery" aria-hidden="true"></i> Eater</h1>
 
     {{!-- Form to capture user inputs for sushi they want to eat --}}
     <div class='container d-flex justify-content-center spacer'>
@@ -14,12 +14,11 @@
 
     <div class='container'>
         <div class='row'>
+            {{!-- List of sushi that is ready to eat --}}
             <div class='col'>
-                {{!-- List of sushi that is ready to eat --}}
                 <h2>Ready to Eat:</h2>
-
                 <div class="card">
-                    <ul class='text-left list-group list-group-flush'>
+                    <ul class='text-sm-left list-group list-group-flush'>
                         {{#each sushi}}
                         {{#unless eaten}}
                         <li class='list-group-item'>{{sushi_name}} <button class='btn eatenBtn' data-id='{{id}}'>
@@ -35,7 +34,7 @@
             <div class='col'>
                 <h2>Already Eaten:</h2>
                 <div class="card">
-                    <ul class='text-left list-group list-group-flush'>
+                    <ul class='text-sm-left list-group list-group-flush'>
                         {{#each sushi}}
                         {{#if eaten}}
                         <li class='list-group-item'>{{sushi_name}}
