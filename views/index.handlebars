@@ -1,52 +1,51 @@
-<div id='mainContainer' class='text-center shadow'>
-    <h1>Sushi Eater!</h1>
+<div id='opaqueBg'>
+    <div id='mainContainer' class='text-center shadow'>
 
-    {{!-- Form to capture user inputs for sushi they want to eat --}}
-    <form id='add-sushi-form' class='form-group'>
-        <input type='text' name='sushi' id='new-sushi' class="form-control" placeholder='What do you want to eat?'>
+        <h1>Sushi Eater!</h1>
 
-        <button class='submitBtn btn btn-primary' type='submit'>Submit</button>
-    </form>
+        {{!-- Form to capture user inputs for sushi they want to eat --}}
+        <form id='add-sushi-form' class='form-group'>
+            <input type='text' name='sushi' id='new-sushi' class="form-control" placeholder='What do you want to eat?'>
 
-    <div class='container'>
-        <div class='row'>
-            <div class='col'>
-                {{!-- List of sushi that is ready to eat --}}
-                {{!-- <div id='readyContainer' class='container'> --}}
-                <h2>Ready to Eat:</h2>
+            <button class='submitBtn btn btn-primary' type='submit'>Submit</button>
+        </form>
 
-<div class="card">
-                <ul class='text-left list-group list-group-flush'>
-                    {{#each sushi}}
-                    {{#unless eaten}}
-                    <li class='list-group-item'>{{sushi_name}} <button class='btn btn-primary eatenBtn' data-id='{{id}}'>
-                            Yum! Enjoy!
-                        </button></li>
-                    {{/unless}}
-                    {{/each}}
-                </ul>
-                {{!-- </div> --}}
-            </div>
-            </div>
-            
+        <div class='container'>
+            <div class='row'>
+                <div class='col'>
+                    {{!-- List of sushi that is ready to eat --}}
+                    <h2>Ready to Eat:</h2>
 
-            {{!-- List of sushi that has been eaten --}}
-            {{!-- <div id='eatenContainer' class='container'> --}}
-            <div class='col'>
-                <h2>Already Eaten:</h2>
-<div class="card">
-                <ul class='text-left list-group list-group-flush'>
-                    {{#each sushi}}
-                    {{#if eaten}}
-                    <li class='list-group-item'>{{sushi_name}}
-                        <button class='btn btn-primary deleteBtn' data-id='{{id}}'>Remove
-                        </button>
-                    </li>
-                    {{/if}}
-                    {{/each}}
-                </ul>
+                    <div class="card">
+                        <ul class='text-left list-group list-group-flush'>
+                            {{#each sushi}}
+                            {{#unless eaten}}
+                            <li class='list-group-item'>{{sushi_name}} <button class='btn btn-primary eatenBtn'
+                                    data-id='{{id}}'>
+                                    Yum! Enjoy!
+                                </button></li>
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+                    </div>
                 </div>
-                {{!-- </div> --}}
+
+                {{!-- List of sushi that has been eaten --}}
+                <div class='col'>
+                    <h2>Already Eaten:</h2>
+                    <div class="card">
+                        <ul class='text-left list-group list-group-flush'>
+                            {{#each sushi}}
+                            {{#if eaten}}
+                            <li class='list-group-item'>{{sushi_name}}
+                                <button class='btn btn-primary deleteBtn' data-id='{{id}}'>Remove
+                                </button>
+                            </li>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
