@@ -61,6 +61,15 @@ h2 {
     margin-bottom: 40px;
 }
 
+a {
+    color: #ff5e13;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #f79862;
+}
+
 /* For iPad views */
 @media (max-width: 800px) {
     #mainContainer {
@@ -79,7 +88,7 @@ h2 {
     #mainContainer {
         width: 95vw;
         padding: 60px 0px;
-        margin: 10px 0px;
+        margin: 30px 0px;
     }
 
     h2 {

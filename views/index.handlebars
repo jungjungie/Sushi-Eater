@@ -1,52 +1,52 @@
 <div class='d-flex justify-content-center'>
-<div id='mainContainer' class='text-center shadow'>
-    
-    <h1>Sushi <i id='icon' class="fa fa-cutlery" aria-hidden="true"></i> Eater</h1>
+    <div id='mainContainer' class='text-center shadow'>
 
-    {{!-- Form to capture user inputs for sushi they want to eat --}}
-    <div class='container d-flex justify-content-center spacer'>
-        <form id='add-sushi-form' class='form-group'>
-            <input type='text' name='sushi' id='new-sushi' class="form-control text-center"
-                placeholder='What do you want to eat?'>
-            <button class='submitBtn btn' type='submit'>Submit</button>
-        </form>
-    </div>
+        <h1>Sushi <i id='icon' class="fa fa-cutlery" aria-hidden="true"></i> Eater</h1>
 
-    <div class='container'>
-        <div class='row'>
-            {{!-- List of sushi that is ready to eat --}}
-            <div class='col'>
-                <h2>Ready to Eat:</h2>
-                <div class="card">
-                    <ul class='text-sm-left list-group list-group-flush'>
-                        {{#each sushi}}
-                        {{#unless eaten}}
-                        <li class='list-group-item'>{{sushi_name}} <button class='btn eatenBtn' data-id='{{id}}'>
-                                Yum! Enjoy!
-                            </button></li>
-                        {{/unless}}
-                        {{/each}}
-                    </ul>
+        {{!-- Form to capture user inputs for sushi they want to eat --}}
+        <div class='container d-flex justify-content-center spacer'>
+            <form id='add-sushi-form' class='form-group'>
+                <input type='text' name='sushi' id='new-sushi' class="form-control text-center"
+                    placeholder='What do you want to eat?'>
+                <button class='submitBtn btn' type='submit'>Submit</button>
+            </form>
+        </div>
+
+        <div class='container'>
+            <div class='row'>
+                {{!-- List of sushi that is ready to eat --}}
+                <div class='col'>
+                    <h2>Ready to Eat:</h2>
+                    <div class="card">
+                        <ul class='text-sm-left list-group list-group-flush'>
+                            {{#each sushi}}
+                            {{#unless eaten}}
+                            <li class='list-group-item'>{{sushi_name}} <button class='btn eatenBtn' data-id='{{id}}'>
+                                    Yum! Enjoy!
+                                </button></li>
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            {{!-- List of sushi that has been eaten --}}
-            <div class='col'>
-                <h2>Already Eaten:</h2>
-                <div class="card">
-                    <ul class='text-sm-left list-group list-group-flush'>
-                        {{#each sushi}}
-                        {{#if eaten}}
-                        <li class='list-group-item'>{{sushi_name}}
-                            <button class='btn deleteBtn' data-id='{{id}}'>Remove
-                            </button>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                    </ul>
+                {{!-- List of sushi that has been eaten --}}
+                <div class='col'>
+                    <h2>Already Eaten:</h2>
+                    <div class="card">
+                        <ul class='text-sm-left list-group list-group-flush'>
+                            {{#each sushi}}
+                            {{#if eaten}}
+                            <li class='list-group-item'>{{sushi_name}}
+                                <button class='btn deleteBtn' data-id='{{id}}'>Remove
+                                </button>
+                            </li>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
