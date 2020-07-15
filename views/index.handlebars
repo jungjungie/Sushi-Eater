@@ -14,11 +14,11 @@
 
         <ul>
             {{#each sushi}}
-                {{#unless eaten eat=true}}
-                    <li>{{sushi_name}} <button class='eatenBtn' data-id='{{id}}' data-nowEaten='{{eat}}'>
-                        Eat it!
-                    </button></li>
-                {{/unless}}
+            {{#unless eaten}}
+            <li>{{sushi_name}} <button class='eatenBtn' data-id='{{id}}'>
+                    Eat it!
+                </button></li>
+            {{/unless}}
             {{/each}}
         </ul>
     </div>
@@ -29,12 +29,12 @@
 
         <ul>
             {{#each sushi}}
-                {{#if eaten eat=false}}
-                    <li>{{sushi_name}}</li>
-                    <button class='change-eaten' data-id='{{id}}' data-newEat='{{eat}}'>
-
-                    </button>
-                {{/if}}
+            {{#if eaten}}
+            <li>{{sushi_name}}
+                <button class='deleteBtn' data-id='{{id}}'>Delete
+                </button>
+            </li>
+            {{/if}}
             {{/each}}
         </ul>
     </div>

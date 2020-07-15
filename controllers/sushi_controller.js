@@ -4,7 +4,7 @@ const router = express.Router();
 // Imports sushi model
 const sushi = require('../models/sushiModel.js');
 
-// Creates all routes and sets up logic within those routes where required
+// Creates all routes
 router.get('/', function(req, res) {
   sushi.all(function(data) {
     let hbsObject = {
@@ -25,22 +25,22 @@ router.post('/api/sushi', function(req, res) {
   });
 });
 
-// router.put('/api/sushi/:id', function(req, res) {
-//   let condition = 'id = ' + req.params.id;
+router.put('/api/sushi/:id', function(req, res) {
+  let sushiId = req.params.id;
 
-//   console.log('condition', condition);
+  sushi.update('eaten', '1', 'id', sushiId, function(result) {
+      res.status(200).end();
+  });
+});
 
-//   sushi.update({
-//     eaten: req.body.eaten
-//   }, condition, function(result) {
-//     if (result.changedRows == 0) {
-//       // If no rows were changed, then the ID must not exist, so 404
-//       return res.status(404).end();
-//     } else {
-//       res.status(200).end();
-//     }
-//   });
-// });
+router.delete("/api/sushi/:id", function(req, res) {
+  var sushiId = req.params.id;
+  // console.log(sushiId);
 
-// Exports routes for server.js to use
+  sushi.delete('id', sushiId, function (result) {
+    res.status(200).end();
+  });
+});
+
+// Exports routes for use in server.js
 module.exports = router;

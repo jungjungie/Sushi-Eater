@@ -12,12 +12,17 @@ let sushi = {
         cb(res);
       });
     },
-    // update: function(objColVals, condition, cb) {
-    //   orm.update('sushi', objColVals, condition, function(res) {
-    //     cb(res);
-    //   });
-    // }
+    update: function(col3, val3, col1, val1, cb) {
+      orm.updateOne('sushi', col3, val3, col1, val1, function(res) {
+        cb(res);
+      });
+    },
+    delete: function(col, val, cb) {
+      orm.deleteOne('sushi', col, val, function (res) {
+        cb(res);
+      })
+    }
   };
   
-  // Exports database functions for the controller (sushi_controllers.js).
+  // Exports database functions for use in sushi_controllers.js
   module.exports = sushi;

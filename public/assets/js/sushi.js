@@ -2,26 +2,20 @@
 $(function () {
 
     // Event listener for 'Eat it!' button
-    // $('.eatenBtn').on('click', function (event) {
-    //     let id = $(this).data('id');
-    //     let nowEaten = $(this).data('nowEaten');
+    $('.eatenBtn').on('click', function (event) {
+        let id = $(this).data('id');
 
-    //     let newEatState = {
-    //         eating: nowEaten
-    //     };
+        // Sends the PUT request
+        $.ajax('/api/sushi/' + id, {
+            type: 'PUT'
+        }).then(
+            function () {
+                console.log(`ID clicked: ${id}`);
 
-    //     // Sends the PUT request
-    //     $.ajax('/api/sushi/' + id, {
-    //         type: 'PUT',
-    //         data: nowEatState
-    //     }).then(
-    //         function () {
-    //             console.log('changed eaten to', nowEaten);
-    //             // Reloads the page to get the updated list
-    //             location.reload();
-    //         }
-    //     );
-    // });
+                location.reload();
+            }
+        );
+    });
 
     // Event listener for 'submit' button to add new sushi
     $('#add-sushi-form').on('submit', function (event) {
@@ -31,8 +25,7 @@ $(function () {
             sushi_name: $('#new-sushi').val().trim(),
             eaten: 0
         };
-
-        console.log(newSushi);
+        // console.log(newSushi);
 
         // Sends the POST request
         $.ajax('/api/sushi', {
@@ -46,4 +39,19 @@ $(function () {
             }
         );
     });
+
+    // Event listener for 'delete' button
+    $('.deleteBtn').on('click', function(event) {
+        event.preventDefault();
+    
+        let id = $(this).data('id');
+
+        $.ajax("/api/sushi/" + id, {
+          type: "DELETE"
+        }).then(
+          function() {
+            location.reload();
+          }
+        );
+      })
 });
